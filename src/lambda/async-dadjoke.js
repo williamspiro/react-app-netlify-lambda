@@ -6,6 +6,7 @@ export async function handler(event, context) {
   try {
     const response = await axios.get("https://icanhazdadjoke.com", { headers: { Accept: "application/json" } })
     const data = response.data
+    console.log(data.joke)
     return {
       statusCode: 200,
       body: JSON.stringify({ msg: data.joke })
